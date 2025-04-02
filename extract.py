@@ -13,11 +13,11 @@ def writeToJson(fileName, jsonEntries):
 
 if __name__ == "__main__":
 
-	wb = load_workbook(filename = 'magic_items_full.xlsx')
+	wb = load_workbook(filename = 'spell_full.xlsx')
 
 	columnNames = []
 
-	sheet = wb["Updated 19Jan2020"]
+	sheet = wb["Updated 31Mar2020"]
 
 	for columnIndex in range(sheet.max_column):
 		columnNames.append(sheet.cell(row = 1, column = columnIndex + 1).value)
@@ -51,4 +51,4 @@ if __name__ == "__main__":
 
 	jsonEntries[len(jsonEntries) - 2] = jsonEntries[len(jsonEntries) - 2][:-1]	#gets rid of last , for the }
 
-	writeToJson("items.json", jsonEntries)	
+	writeToJson("spells.json", jsonEntries)	
